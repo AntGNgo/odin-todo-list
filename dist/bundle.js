@@ -76,7 +76,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _todo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todo */ \"./src/todo.js\");\n/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./storage */ \"./src/storage.js\");\n\n\n\n// Storage.setData({\n// \tprojects: ['School', 'work', 'personal'],\n// \ttodos: [{ name: 'run', project: 'personal' }],\n// });\n\nlocalStorage.removeItem('data');\nconst info = _storage__WEBPACK_IMPORTED_MODULE_1__[\"default\"].getData();\nconsole.log(info);\n\nconst myTodo = new _todo__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Run', 'Gotta go fast', 'tonight', 'high', 'none');\n_storage__WEBPACK_IMPORTED_MODULE_1__[\"default\"].appendTodo(myTodo);\n_storage__WEBPACK_IMPORTED_MODULE_1__[\"default\"].setData();\n\nconst newInfo = _storage__WEBPACK_IMPORTED_MODULE_1__[\"default\"].getData();\n\nconsole.log(newInfo);\n\n\n//# sourceURL=webpack://odin-todo-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _todo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todo */ \"./src/todo.js\");\n/* harmony import */ var _project__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./project */ \"./src/project.js\");\n/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./storage */ \"./src/storage.js\");\n\n\n\n\n// Storage.setData({\n// \tprojects: ['School', 'work', 'personal'],\n// \ttodos: [{ name: 'run', project: 'personal' }],\n// });\n\nconst myTodo = new _todo__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('Run', 'Gotta go fast', 'tonight', 'high', 'personal');\n\nconst personalProject = new _project__WEBPACK_IMPORTED_MODULE_1__[\"default\"]('personal');\n\npersonalProject.addTodo(myTodo);\n\nconsole.log(personalProject.list);\n\npersonalProject.removeTodo(myTodo.id);\nconsole.log(personalProject.list);\n\nconst newInfo = _storage__WEBPACK_IMPORTED_MODULE_2__[\"default\"].getData();\n\nconsole.log(newInfo);\n\n\n//# sourceURL=webpack://odin-todo-list/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/project.js":
+/*!************************!*\
+  !*** ./src/project.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass Project {\n\tconstructor(name) {\n\t\tthis.name = name;\n\t\tthis.list = [];\n\t}\n\n\taddTodo(todo) {\n\t\tthis.list.push(todo.id);\n\t}\n\n\tremoveTodo(id) {\n\t\tconst index = this.list.indexOf(id);\n\t\tthis.list.splice(index, 1);\n\t}\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Project);\n\n\n//# sourceURL=webpack://odin-todo-list/./src/project.js?");
 
 /***/ }),
 
