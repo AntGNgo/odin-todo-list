@@ -1,3 +1,4 @@
+import Todo from './todo';
 import Storage from './storage';
 
 Storage.setData({
@@ -6,5 +7,9 @@ Storage.setData({
 });
 
 const info = Storage.getData();
+
+const myTodo = new Todo('Run', 'Gotta go fast', 'tonight', 'high', 'none');
+
+console.log(myTodo)
 
 console.log(info);

@@ -1,6 +1,19 @@
 class Storage {
-	static setData(data) {
-		localStorage.setItem('data', JSON.stringify(data));
+	static storageArray = [];
+
+	static todos = [];
+	static projects = [];
+	static notes = [];
+
+	static buildStorageArray() {
+		this.storageArray.push(this.todos);
+		this.storageArray.push(this.projects);
+		this.storageArray.push(this.notes);
+	}
+
+	static setData() {
+		this.buildStorageArray();
+		localStorage.setItem('data', JSON.stringify(this.storageArray));
 	}
 
 	static getData() {
