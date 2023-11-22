@@ -11,6 +11,12 @@ class Storage {
 		this.storageArray.push(this.notes);
 	}
 
+	static appendTodo(todo) {
+		this.todos.push(todo);
+	}
+
+	static deleteTodo(id) {}
+
 	static setData() {
 		this.buildStorageArray();
 		localStorage.setItem('data', JSON.stringify(this.storageArray));
