@@ -2,40 +2,37 @@ import Todo from './todo';
 import Project from './project';
 import Storage from './storage';
 
-// Storage.setData({
-// 	projects: ['School', 'work', 'personal'],
-// 	todos: [{ name: 'run', project: 'personal' }],
-// });
+let tasks = [{ name: 'run' }];
+let projects = [{ name: 'personal' }];
 
-const personalProj = new Project('personal');
-Storage.addProject(personalProj);
+// localStorage.setItem(
+// 	'data',
+// 	JSON.stringify({
+// 		tasks: [{ name: 'Run' }],
+// 		projects: [{ name: 'personal', list: ['id-here'] }],
+// 	})
+// );
 
-const myTodo = new Todo('Run', 'Gotta go fast', 'tonight', 'high', 'personal');
+const saveToLocalStorage = (tasks, projects) => {
+	localStorage.setItem(
+		'data',
+		JSON.stringify({ tasks: [...tasks], projects: [...projects] })
+	);
+};
 
-if (Storage.projects.includes(myTodo.project)) {
-	personalProj.addTodo(myTodo);
-}
+const loadFromLocalStorage = () => {
+	const data = localStorage.getItem('data');
+	console.log(data);
+	if (data === null) {
+		return;
+	}
+	const parsedData = JSON.parse(data);
+	tasks = parsedData.tasks;
+	projects = parsedData.projects;
+};
 
-console.log(Storage.projects);
-console.log(personalProj);
+const newTodo = new Todo('Run', 'Run a lot', '2023-12-11', 'high');
 
-// How to get tasks?
-/* 
-    Theres going to be an array of all tasks that can be used to show all tasks
+newTodo.changeDescription('Gotta go fast');
 
-    Everytime new task is added, push to this array and render the list
-
-    If the task has a project associated, push the task id to the project
-
-    To render the project, loop through the ids of the project and find the id in the main todo array and show it
-
-*/
-
-/* 
-    How to assign a task to a project
-
-    Project needs to be created first before a task can be assigned to one
-
-    When a project is created add it to the array
-
-*/
+console.log(newTodo);
