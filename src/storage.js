@@ -11,8 +11,12 @@ class Storage {
 		this.storageArray.push(this.notes);
 	}
 
-	static appendTodo(todo) {
+	static addTodo(todo) {
 		this.todos.push(todo);
+	}
+
+	static addProject(project) {
+		this.projects.push(project);
 	}
 
 	static deleteTodo(id) {}
