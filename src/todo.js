@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { parse } from 'date-fns';
+import { format, parse } from 'date-fns';
 class Todo {
 	constructor(name, description, dueDate, priority) {
 		(this.name = name),
@@ -23,7 +23,7 @@ class Todo {
 	}
 
 	changeDueDate(newDate) {
-		this.dueDate = newDate;
+		this.dueDate = format(newDate, 'yyyy-MM-dd');
 	}
 
 	changePriority(newPriority) {

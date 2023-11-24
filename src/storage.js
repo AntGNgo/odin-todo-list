@@ -1,11 +1,11 @@
 class Storage {
-	static tasks = [{ name: 'run' }];
-	static projects = [{ name: 'personal' }];
+	static tasks = [];
+	static projects = [];
 
-	static saveToLocalStorage = (tasks, projects) => {
+	static saveToLocalStorage = () => {
 		localStorage.setItem(
 			'data',
-			JSON.stringify({ tasks: [...tasks], projects: [...projects] })
+			JSON.stringify({ tasks: [...this.tasks], projects: [...this.projects] })
 		);
 	};
 
@@ -19,6 +19,19 @@ class Storage {
 		tasks = parsedData.tasks;
 		projects = parsedData.projects;
 	};
+
+	static deleteTodo(id) {
+		const index = this.tasks.findIndex((task) => task.id === id);
+		this.tasks.splice(index, 1);
+		this.saveToLocalStorage();
+	}
+
+	static findAndReplaceTask(newTask) {
+		const taskIndex = this.tasks.findIndex((task) => newTask.id === task.id);
+		if (taskIndex !== -1) {
+			this.tasks.taskIndex = newTask;
+		}
+	}
 }
 
 export default Storage;
