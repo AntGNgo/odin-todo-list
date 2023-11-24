@@ -20,10 +20,16 @@ class Storage {
 		projects = parsedData.projects;
 	};
 
-	static deleteTodo(id) {
-		const index = this.tasks.findIndex((task) => task.id === id);
-		this.tasks.splice(index, 1);
-		this.saveToLocalStorage();
+	static deleteElement(id, type) {
+		if (type === 'task') {
+			const index = this.tasks.findIndex((task) => task.id === id);
+			this.tasks.splice(index, 1);
+			this.saveToLocalStorage();
+		} else if (type === 'task') {
+			const index = this.projects.findIndex((project) => project.id === id);
+			this.projects.splice(index, 1);
+			this.saveToLocalStorage();
+		}
 	}
 
 	// static findAndReplaceElement(newElement, type) {
