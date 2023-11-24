@@ -5,10 +5,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Hello World</h1>
+    <h1>Todo List</h1>
+
+    <form action="#">
+        <div>
+            <label for="task-name">Task:</label>
+            <input type="text" name="task-name" id="task-name">
+        </div>
+        <div>
+            <label for="task-description">Description:</label>
+            <input type="text" name="task-description" id="task-description">
+        </div>
+        <div>
+            <label for="task-due">Due Date:</label>
+            <input type="date" name="task-due" id="task-due">
+
+        </div>
+        <div>
+            <label for="task-priority">Priority:</label>
+            <select name="task-priority" id="task-priority">
+                <option value="none">None</option>
+                <option value="low">Low</option>
+                <option value="med">Medium</option>
+                <option value="high">High</option>
+            </select>
+
+        </div>
+        <div>
+            <label for="projects">Project:</label>
+            <select name="projects" id="projects">
+                <option value="none" selected>None</option>
+                <option value="new-project">New Project</option>
+            </select>
+
+        </div>
+        <button type="submit">Add Task</button>
+    </form>
+    <div class="container">
+        <div class="nav">
+            <button>All</button>
+        </div>
+        <div class="tasks">
+            <div id="filter-title">All</div>
+            <ul>
+                <li>
+                    <div class="name">Go for a Run</div>
+                    <div class="description">Run around the block</div>
+                    <div class="due-date">2024-12-11</div>
+                    <div class="priority">High</div>
+                </li>
+                <li>
+                    <div class="name">Go for a Run</div>
+                    <div class="description">Run around the block</div>
+                    <div class="due-date">2024-12-11</div>
+                    <div class="priority">High</div>
+                </li>
+            </ul>
+        </div>
+    </div>
     <script src="bundle.js"></script>
 </body>
 
