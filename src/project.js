@@ -1,16 +1,21 @@
+import { v4 as uuidv4 } from 'uuid';
+
 class Project {
 	constructor(name) {
 		this.name = name;
 		this.list = [];
+		this.id = uuidv4();
 	}
 
-	addTodo(todo) {
-		this.list.push(todo.id);
+	addTasktoProject(task) {
+		this.list.append(task);
 	}
 
-	removeTodo(id) {
-		const index = this.list.indexOf(id);
-		this.list.splice(index, 1);
+	removeTaskfromProject(taskID) {
+		const index = this.list.findIndex((task) => taskID === task.id);
+		if (index !== -1) {
+			this.list.splice(index, 1);
+		}
 	}
 }
 
