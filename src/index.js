@@ -2,8 +2,6 @@ import Todo from './todo';
 import Project from './project';
 import Storage from './storage';
 
-localStorage.clear();
-
 const createNewTask = (name, description, date, priority) => {
 	const todo = new Todo(name, description, date, priority);
 	Storage.tasks.push(todo);
@@ -16,3 +14,10 @@ const createNewProject = (name) => {
 	Storage.projects.push(project);
 	Storage.saveToLocalStorage();
 };
+
+const taskName = document.getElementById('task-name');
+const taskDescription = document.getElementById('task-description');
+const taskDue = document.getElementById('task-due');
+const taskPriority = document.getElementById('task-priority');
+const taskProject = document.getElementById('projects');
+const newTaskBtn = document.getElementById('task-add');
