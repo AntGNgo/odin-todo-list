@@ -1,12 +1,13 @@
 import { v4 as uuidv4 } from 'uuid';
 import { format, parse } from 'date-fns';
 class Todo {
-	constructor(name, description, dueDate, priority) {
+	constructor(name, description, dueDate, priority, project) {
 		(this.name = name),
 			(this.description = description),
 			(this.dueDate = parse(dueDate, 'yyyy-MM-dd', new Date())),
 			(this.priority = priority),
 			(this.completed = false),
+			(this.project = project),
 			(this.id = uuidv4());
 	}
 

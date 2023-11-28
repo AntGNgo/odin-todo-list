@@ -31,24 +31,6 @@ class Storage {
 			this.saveToLocalStorage();
 		}
 	}
-
-	// static findAndReplaceElement(newElement, type) {
-	// 	if (type === 'task') {
-	// 		const taskIndex = this.tasks.findIndex(
-	// 			(task) => newElement.id === task.id
-	// 		);
-	// 		if (taskIndex !== -1) {
-	// 			this.tasks[taskIndex] = newElement;
-	// 		}
-	// 	} else if (type === 'project') {
-	// 		const projectIndex = this.projects.findIndex(
-	// 			(project) => newElement.id === project.id
-	// 		);
-	// 		if (projectIndex !== -1) {
-	// 			this.projects[projectIndex] = newElement;
-	// 		}
-	// 	}
-	// }
 }
 
 export default Storage;

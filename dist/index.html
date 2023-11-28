@@ -29,16 +29,16 @@
             <label for="task-priority">Priority:</label>
             <select name="task-priority" id="task-priority">
                 <option value="none">None</option>
-                <option value="low">Low</option>
-                <option value="med">Medium</option>
-                <option value="high">High</option>
+                <option value="Low">Low</option>
+                <option value="Med">Medium</option>
+                <option value="High">High</option>
             </select>
 
         </div>
         <div>
             <label for="projects">Project:</label>
             <select name="projects" id="projects">
-                <option value="none" selected>None</option>
+                <option value="None" selected>None</option>
             </select>
 
         </div>
@@ -48,25 +48,23 @@
         <div class="nav">
             <p>Projects</p>
             <button id="all-projects">All</button>
-            <button class="new-project">New Project</button>
+            <div id="created-projects"></div>
+            <button id="new-project">New Project</button>
+            <div id="new-project-form" class="hidden">
+                <input type="text" id="new-project-input" placeholder="Project name...">
+                <button id="new-project-submit">Add</button>
+            </div>
         </div>
+
         <div class="tasks">
             <div id="filter-title">All</div>
-            <table class="tasks-table">
+            <table id="tasks-table">
                 <tr>
                     <th>Task</th>
                     <th>Description</th>
                     <th>Due</th>
                     <th>Priority</th>
                     <th>Project</th>
-                </tr>
-                <tr class="completed">
-                    <td class="name">Go for a run</td>
-                    <td class="description">Run around the block</td>
-                    <td class="due-date">2024-12-11</td>
-                    <td class="priority">High</td>
-                    <td class="project"></td>
-                    <td class="delete-task"><button>X</button></td>
                 </tr>
             </table>
         </div>
