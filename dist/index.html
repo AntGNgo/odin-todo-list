@@ -39,16 +39,16 @@
             <label for="projects">Project:</label>
             <select name="projects" id="projects">
                 <option value="none" selected>None</option>
-                <option value="new-project">New Project</option>
             </select>
 
         </div>
-        <button type="submit">Add Task</button>
+        <button type="submit" id="task-add">Add Task</button>
     </form>
     <div class="container">
         <div class="nav">
             <p>Projects</p>
-            <button>All</button>
+            <button id="all-projects">All</button>
+            <button class="new-project">New Project</button>
         </div>
         <div class="tasks">
             <div id="filter-title">All</div>
@@ -66,6 +66,7 @@
                     <td class="due-date">2024-12-11</td>
                     <td class="priority">High</td>
                     <td class="project"></td>
+                    <td class="delete-task"><button>X</button></td>
                 </tr>
             </table>
         </div>
