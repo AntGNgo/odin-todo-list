@@ -52,27 +52,22 @@
         </div>
         <div class="tasks">
             <div id="filter-title">All</div>
-            <div class="task-headers">
-                <div>Task</div>
-                <div>Description</div>
-                <div>Due</div>
-                <div>Priority</div>
-                <div>Project</div>
-            </div>
-            <ul>
-                <li>
-                    <div class="name">Go for a Run</div>
-                    <div class="description">Run around the block</div>
-                    <div class="due-date">2024-12-11</div>
-                    <div class="priority">High</div>
-                </li>
-                <li>
-                    <div class="name">Go for a Run</div>
-                    <div class="description">Run around the block</div>
-                    <div class="due-date">2024-12-11</div>
-                    <div class="priority">High</div>
-                </li>
-            </ul>
+            <table class="tasks-table">
+                <tr>
+                    <th>Task</th>
+                    <th>Description</th>
+                    <th>Due</th>
+                    <th>Priority</th>
+                    <th>Project</th>
+                </tr>
+                <tr class="completed">
+                    <td class="name">Go for a run</td>
+                    <td class="description">Run around the block</td>
+                    <td class="due-date">2024-12-11</td>
+                    <td class="priority">High</td>
+                    <td class="project"></td>
+                </tr>
+            </table>
         </div>
     </div>
     <script src="bundle.js"></script>
