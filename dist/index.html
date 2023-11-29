@@ -14,11 +14,11 @@
     <form action="#">
         <div>
             <label for="task-name">Task:</label>
-            <input type="text" name="task-name" id="task-name">
+            <input type="text" name="task-name" id="task-name" maxlength="20" required>
         </div>
         <div>
             <label for="task-description">Description:</label>
-            <input type="text" name="task-description" id="task-description">
+            <input type="text" name="task-description" id="task-description" maxlength="50">
         </div>
         <div>
             <label for="task-due">Due Date:</label>
@@ -51,7 +51,7 @@
             <div id="created-projects"></div>
             <button id="new-project">New Project</button>
             <div id="new-project-form" class="hidden">
-                <input type="text" id="new-project-input" placeholder="Project name...">
+                <input type="text" id="new-project-input" placeholder="Project name..." maxlength="20">
                 <button id="new-project-submit">Add</button>
             </div>
         </div>
